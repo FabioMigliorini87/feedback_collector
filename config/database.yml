@@ -14,9 +14,32 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-default: &default
-  adapter: postgresql
+development:
+  adapter:  postgresql
+  host:     localhost
   encoding: unicode
-  # For details on connection pooling, see rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: 5
+  database: feedback_collector_development
+  pool:     5
+  username: postgres
+  password:
+  template: template0
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: feedback_collector_test
+  pool:     5
+  username: postgres
+  password: pass
+  template: template0
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: feedback_collector_development
+  pool:     5
+  username: postgres
+  password: pass
+  template: template0
